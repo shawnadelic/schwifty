@@ -1,9 +1,12 @@
 import Kitura
 import HeliumLogger
+import KituraMustache
 
 HeliumLogger.use()
 
 let router = Router()
+
+router.add(templateEngine: MustacheTemplateEngine())
 
 router.all("/name", middleware: BodyParser())
 
